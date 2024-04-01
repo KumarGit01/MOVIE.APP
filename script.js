@@ -90,12 +90,12 @@ form.addEventListener("submit", (e) => {
 window.addEventListener("scroll", () => {
     const { scrollTop, scrollHeight, clientHeight } = document.documentElement;
 
-    console.log({
+/*    console.log({
         scrollTop,
         scrollHeight,
         clientHeight
     });
-
+*/
     // Check if the user has scrolled to the bottom of the page
     if (scrollTop + clientHeight >= scrollHeight - 20) {
         // Load more movies when the user is near the bottom
