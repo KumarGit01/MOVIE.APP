@@ -3,8 +3,9 @@ display: none;
     scroll-behavior: smooth;
 }
 .navbar{
+    z-index: 10;
+    position: fixed;
     width: 100%;
-    position: relative;
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -12,39 +13,46 @@ display: none;
     box-shadow: 0px 0px 7px 0px rgb(17, 17, 17);
 }
 .serch input{
+    position: fixed;
+    top: 24px;
+    right: 300px;
     color: #121212;
     padding: 10px 10px;
     border-radius: 15px;
     outline: none;
-    font-size: 16px;
+    font-size: 18px;
     border: 1px solid black;
     text-align: center;
+    z-index: 10;
 }
 
 .Logo span{
+    z-index: 10;
     position: absolute;
-    top: 46.5px;
-    left: 270px;
-   width: 10px;
-   height: 10px;
+    top:-7px;
+    left: 75px;
+   width: 15px;
+   height: 15px;
    background-color: black;
    border-radius: 50%;
-   background-color: rgb(241, 240, 240);
+   background-color: rgb(237, 24, 24);
 
 }
 .Logo h1{
+    position: relative;
+    left: -500px;
     color: aliceblue;
 }
 .apires{
     position: relative;
-    top: 20px;
-    left: 0px;
+    top: 130px;
+    left: 40px;
     display: grid;
 grid-template-columns: 1fr 1fr 1fr 1fr;
 list-style: none;
 row-gap: 50px;
 column-gap: 15px;
-width: fit-content;
+width: 1400px;
 }
 .apifetch:hover .details{
     right: 0px;
@@ -54,18 +62,19 @@ width: fit-content;
 .details{
     transition: all .7s ease-in-out;
     position: absolute;
-    top: 140px;
+    top: 0px;
     right: 400px;
 width: 100%;
-height: 150px;
+height: 100%;
 text-align: center;
 font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-size: larger;
     font-style: normal;
-background-color: #121212;
+background-color: #121212b9;
 overflow: scroll;
 }
+
 .apires .rotate{
 width: 340px;
 height: 340px;
@@ -85,18 +94,24 @@ transition: all 1s ease-in-out;
 transition: all 1s ease-in-out;
 bottom: 5px;
 
-
 }
 .apifetch{
-    position: relative;
-    box-shadow: 2px 3px 20px 0px black;
-    border-radius: 8px;
-  text-align: center;
+    box-shadow: rgba(6, 24, 44, 0.4) 0px 0px 0px 2px, rgba(6, 24, 44, 0.65) 0px 4px 6px -1px, rgba(255, 255, 255, 0.08) 0px 1px 0px inset;  
+     position: relative;
+    text-align: center;
 background: #121212;
 color: aliceblue;
 height: 420px;
 overflow: hidden;
+transition: all 1s ease-in-out;
+perspective: 500px;
 
+
+}
+.apifetch:hover {
+    perspective: 1000px;
+    box-shadow: rgba(3, 102, 214, 0.3) 0px 0px 0px 3px;
+    border-radius: 5%;
 }
 .rate{
     display: none;
@@ -106,7 +121,9 @@ overflow: hidden;
     font-size: 20px;
 }
 
+
 .click{
+    z-index: 20;
     position: absolute;
     top:-100px;
     left: 50px;
@@ -116,9 +133,8 @@ overflow: hidden;
     width: 80px;
     transition: all .7s ease-in-out;
     cursor: pointer;
-
 }
-.apifetch:hover .click{
+.details:hover .click{
     top: 20px;
     z-index: 1;
 }
@@ -148,9 +164,11 @@ a{
 
 .k{
     position: relative;
-    top: 100px;
+    top: 180px;
     list-style: none;
-    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 .k img{
     position: absolute;
@@ -160,4 +178,162 @@ width: 750px;
 height: 750px;
 cursor: pointer;
 transition: all 1s ease-in-out;
+}
+.title2{
+    position: absolute;
+    right: 120px;
+    font-family: "Poppins", sans-serif;
+    font-weight: 500;
+    font-size: 40px;
+    font-style: normal;
+transition: all 1s ease-in-out;
+top: 70px;
+
+}
+.rate2{
+    position: absolute;
+    top: 15px;
+    border-radius: 10px;
+    right: 570px;
+    background-color: rgb(15, 228, 118);
+    color: aliceblue;
+    width: 60px;
+    font-weight: bolder;
+    font-size: 26px;
+    text-align: center;
+    box-shadow: 2px 2px 15px 0px black;
+
+}
+
+
+.date2{
+    right: 130px;
+    width: 320px;
+    font-size: 30px;
+    font-weight: bolder;
+    position: absolute;
+    background-color: rgba(251, 239, 7, 0.971);
+    top: 190px;
+    transition: all .7s ease-in-out;
+    text-align: center;
+}
+
+.details2{
+    background-color:#121212;
+    color: rgb(243, 246, 249);
+    width: 400px;
+    height: 140px;
+    position: absolute;
+    top: 320px;
+    right: 90px;
+text-align: center;
+border-radius: 5px;
+}
+.dd{
+    position: relative;
+    left: -60px;
+    width: 600px;
+    height: 600px;
+    box-shadow: 2px 2px 15px 0px black;
+}
+
+
+.button-89 {
+    cursor: pointer;
+    top: 20px;
+    right: 300px;
+    position: fixed;
+    z-index: 10;
+  --b: 3px;   /* border thickness */
+  --s: .45em; /* size of the corner */
+  --color: #054cf2;
+  
+  padding: calc(.5em + var(--s)) calc(.9em + var(--s));
+  color: var(--color);
+  --_p: var(--s);
+  background:
+    conic-gradient(from 90deg at var(--b) var(--b),#0000 90deg,var(--color) 0)
+    var(--_p) var(--_p)/calc(100% - var(--b) - 2*var(--_p)) calc(100% - var(--b) - 2*var(--_p));
+  transition: .3s linear, color 0s, background-color 0s;
+  outline: var(--b) solid #0000;
+  outline-offset: .6em;
+  font-size: 16px;
+
+  border: 0;
+
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-89:hover,
+.button-89:focus-visible{
+  --_p: 0px;
+  outline-color: var(--color);
+  outline-offset: .05em;
+  color: #ede8e8;
+font-weight: bolder;
+font-size: 17px;
+}
+
+.button-89:active {
+  background: var(--color);
+  color: #fff;
+}
+
+
+
+.button-64 {
+    font-weight: bolder;
+    position: absolute;
+    right: 150px;
+    top: 26px;
+    z-index: 10;
+  align-items: center;
+  background-image: linear-gradient(144deg,#AF40FF, #5B42F3 50%,#00DDEB);
+  border: 0;
+  border-radius: 8px;
+  box-shadow: rgba(151, 65, 252, 0.2) 0 15px 30px -5px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  display: flex;
+  font-family: Phantomsans, sans-serif;
+  font-size: 15px;
+  justify-content: center;
+  line-height: 1em;
+  max-width: 80%;
+  min-width: 100px;
+  padding: 1px;
+  text-decoration: none;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.button-64:active,
+.button-64:hover {
+  outline: 0;
+}
+
+.button-64 span {
+  background-color: rgb(5, 6, 45);
+  padding: 10px 10px;
+  border-radius: 6px;
+  width: 100%;
+  height: 100%;
+  transition: 300ms;
+}
+
+.button-64:hover span {
+  background: none;
+}
+
+.po{
+    width: 100px;
+    position: absolute;
+    left: 120px;
+    top: 180px;
+    cursor: pointer;
 }

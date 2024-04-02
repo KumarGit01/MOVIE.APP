@@ -1,43 +1,51 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState,useContext } from 'react';
 import { useParams } from 'react-router-dom';
+import './Navbar.css'
+import Navbar from './Navbar';
+import { movieContext } from './apiContext';
 
 const Kk = () => {
-  const [data, setData] = useState([]);
+  const {data,image,search,value,changeHandle,submitHandle} = useContext(movieContext)
+
   const [movie, setMovie] = useState(null);
   const { id } = useParams();
-  const data1 = "https://image.tmdb.org/t/p/w1280";
 
-  const getMovies = async () => {
-    try {
-      const response = await fetch("https://api.themoviedb.org/3/discover/movie?api_key=04c35731a5ee918f014970082a0088b1");
-      const data = await response.json();
-      setData(data.results);
-    } catch (error) {
-      console.error('Error fetching movies:', error);
-    }
-  };
-
-  useEffect(() => {
-    getMovies();
-  }, []);
-
-  useEffect(() => {
-    const movieById = data.find(movie => movie.id === Number(id));
-    if (movieById) {
-      setMovie(movieById);
-    }
-  }, [data, id]);
+  useEffect(()=>{
+    const clicked  = data.find((movie)=> movie.id === Number(id))
+setMovie(clicked)
+  },[id])
 
   if (!movie) {
     return <div>Loading...</div>;
   }
 
+  const submitHandle1 = ()=>{
+    window.location.replace('/')
+  }
   return (
+  <>
+    <Navbar />
+  
+<button className="button-89" role="button" onClick={submitHandle1}>Home</button>
+  
     <div className='k'>
-      <div key={movie.id}>
-        <li><img src={data1 + movie.poster_path} alt={movie.original_title} /></li>
+
+      <div >
+        <li><img src={image + movie.poster_path} alt={movie.original_title} /></li>
+
       </div>
+
+      <div className='dd' >
+<li className='title2'> {movie.original_title} </li>
+<li className='rate2'>{Math.floor(movie.vote_average)}</li>
+ 
+ <li className='date2'>Date : {movie.release_date}</li>
+<div className='details2'> <li >{movie.overview}</li>
+      </div>
+      <button >Addd To Watchlist</button>
     </div>
+    </div>
+    </>
   );
 }
 
