@@ -4,7 +4,7 @@ import {Route,Routes}  from 'react-router-dom'
 import Navbar from './components/Navbar/Navbar';
 import Kk from './components/Navbar/kk';
 import ApiC from './components/Navbar/apiContext';
-import Api from './components/Navbar/Api';
+import Api from './components/Navbar/api' 
 
 function App() {
   return (
